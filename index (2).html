@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PyLE · Unidad 5 — Temas en debate en la política educativa actual</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="overline">Política y Legislación Escolar · Unidad 5</p>
+    <h1>Temas en debate en la agenda de la política educativa actual</h1>
+    <p class="pregunta">«¿Quién decide qué significa «derecho a la educación»?»</p>
+    <p class="hero-sub">Sitio de estudio para el coloquio — organizado por <strong>temas/períodos</strong> y por <strong>autores</strong>. Todo el contenido proviene de las diapositivas de la cátedra y de los artículos de Saforcada &amp; Ximenes (2024) y Gluz &amp; Kesler (2024).</p>
+    <div class="search-wrap">
+      <input type="search" id="buscador" placeholder="Buscar en todo el sitio: «juridificación», «vouchers», «individuación», «Chile»…">
+      <p class="search-hint" id="searchHint"></p>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="resumen" class="active">⚡ Resumen expres</button>
+  <button data-tab="timeline">🕒 Temas / Períodos</button>
+  <button data-tab="temas">📚 Temas en profundidad</button>
+  <button data-tab="autores">👤 Autores</button>
+  <button data-tab="comparativa">⚖️ Comparativa</button>
+  <button data-tab="guia">📝 Guía resuelta</button>
+  <button data-tab="quiz">🎯 Quiz: ¿quién dijo?</button>
+  <button data-tab="normativa">📜 Normativa</button>
+</nav>
+
+<main>
+  <section id="tab-resumen" class="tab active">
+    <h2>Resumen expres: la unidad en 10 ideas</h2>
+    <p class="lead">Si tenés poco tiempo, empieza acá. Cada idea es un «gancho» que después se desarrolla en las otras secciones.</p>
+    <div id="resumen-list" class="cards-1"></div>
+  </section>
+
+  <section id="tab-timeline" class="tab">
+    <h2>Los temas por momento histórico (orden de los sucesos)</h2>
+    <p class="lead">El derecho a la educación funciona por <strong>ciclos de expansión y retracción</strong>: avanzar con el cursor para ver qué pasó en cada etapa y quién lo analiza.</p>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section id="tab-temas" class="tab">
+    <h2>Los 15 temas en profundidad</h2>
+    <p class="lead">Cada tema indica <strong>qué autor(es) lo trabajan</strong> y cierra con una cita textual que podés usar en el coloquio.</p>
+    <div class="cards-2" id="temas-grid"></div>
+  </section>
+
+  <section id="tab-autores" class="tab">
+    <h2>Los autores: qué dice cada uno</h2>
+    <p class="lead">Tres fichas: tesis central, escala de análisis, qué dice cada autor sobre cada tema, conceptos clave y citas textuales con página.</p>
+    <div id="autores-list" class="cards-1"></div>
+  </section>
+
+  <section id="tab-comparativa" class="tab">
+    <h2>Comparativa: en qué coinciden y en qué se diferencian</h2>
+    <p class="lead">Tabla tema por tema entre <strong>Saforcada y Ximenes</strong> y <strong>Gluz y Kesler</strong>, más las coincidencias y diferencias generales.</p>
+    <h3 id="h-coincidencias">Lo que tienen en común</h3>
+    <ul class="lista-check" id="coincidencias"></ul>
+    <h3>Lo que los diferencia</h3>
+    <ul class="lista-cross" id="diferencias"></ul>
+    <h3>Tabla comparativa tema por tema</h3>
+    <div class="tabla-wrap"><table id="tablaComp">
+      <thead><tr><th>Tema</th><th>Saforcada y Ximenes</th><th>Gluz y Kesler</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <section id="tab-guia" class="tab">
+    <h2>Guía de la Unidad 5, resuelta</h2>
+    <p class="lead">Las consignas del documento «Actividad unidad 5» con sus respuestas, tal como se responden en el coloquio.</p>
+    <div class="cuadro-wrap">
+      <h3>Cuadro: las dos concepciones del derecho a la educación</h3>
+      <div class="tabla-wrap"><table id="cuadroConcepciones">
+        <thead><tr><th></th><th>Derecho individual</th><th>Derecho social</th></tr></thead>
+        <tbody>
+          <tr><th>Qué igualdad supone</th><td>IGUALDAD FORMAL: el derecho se reconoce jurídicamente a todas las personas. Se expresa como <strong>igualdad de oportunidades</strong>.</td><td>IGUALDAD EN EL ACCESO a una educación de <strong>calidad a lo largo de la vida</strong>.</td></tr>
+          <tr><th>Rol del Estado</th><td><strong>Propiciar</strong> que existan oportunidades, por vía propia o de la <strong>iniciativa privada</strong>, en el marco de las libertades individuales.</td><td>El Estado como <strong>ámbito de lo común</strong>: responsabilidad <strong>principal</strong> de garantizar el derecho.</td></tr>
+          <tr><th>Cómo se realiza</th><td>Por el ejercicio individual del derecho dentro de ese marco de libertades (no exige realización efectiva).</td><td>Mediante la <strong>educación pública</strong>, con <strong>realización efectiva</strong> (no basta el reconocimiento jurídico).</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="cards-1" id="guia-list"></div>
+  </section>
+
+  <section id="tab-quiz" class="tab">
+    <h2>Quiz: ¿qué autor dijo…?</h2>
+    <p class="lead">El formato de pregunta que te avisaron para el coloquio. Cada cita con tres opciones, explicación y página.</p>
+    <div class="quiz-meta"><span id="quizScore">Puntaje: 0 / <span id="quizTotal"></span></span><button id="quizReset" class="btn-mini">Reiniciar</button></div>
+    <div id="quiz-list" class="cards-1"></div>
+  </section>
+
+  <section id="tab-normativa" class="tab">
+    <h2>Normativa, leyes y programas mencionados</h2>
+    <p class="lead">Chuleta rápida: cada norma o programa, en una línea, y quién lo analiza (S&amp;X = Saforcada y Ximenes · G&amp;K = Gluz y Kesler).</p>
+    <div class="tabla-wrap"><table id="tablaNorm">
+      <thead><tr><th>Norma / programa</th><th>Qué es / qué hizo</th><th>Analyzan</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <p id="noResults" class="no-results" hidden>No hay resultados para esa búsqueda. Probá con otro término (por ejemplo: «igualdad», «evaluación», «Milei», «pandemia»).</p>
+</main>
+
+<footer>
+  <p>Hecho para estudiar el coloquio de <strong>Política y Legislación Escolar · Unidad 5</strong>. Contenido extraído íntegramente de: el PPT de la cátedra, Saforcada &amp; Ximenes (2024, <em>Tramas y Redes</em> 6, págs. 17-28) y Gluz &amp; Kesler (2024, <em>Debates em Educação</em> 16/38, págs. 1-19), más la guía «Actividad unidad 5».</p>
+</footer>
+
+<script src="app.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
